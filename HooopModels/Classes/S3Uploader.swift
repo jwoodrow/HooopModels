@@ -63,7 +63,7 @@ open class NetworkManager: Alamofire.SessionManager {
         super.init(configuration: configuration)
     }
     
-    class func uploadFileWithURL(URL: NSURL, contentType: String, destination: String, key: String, completion: @escaping (_ value: String?, _ error: Error?) -> Void) {
+    class public func uploadFileWithURL(URL: NSURL, contentType: String, destination: String, key: String, completion: @escaping (_ value: String?, _ error: Error?) -> Void) {
         let _: () = {
             let credentialsProvider = AWSStaticCredentialsProvider(accessKey: NetworkManager.AWSAccessKey, secretKey: NetworkManager.AWSSecret)
             let configuration = AWSServiceConfiguration(region: NetworkManager.AWSRegion, credentialsProvider: credentialsProvider)
@@ -96,7 +96,7 @@ open class NetworkManager: Alamofire.SessionManager {
         }
     }
     
-    class func uploadData(data: Data, contentType: String, destination: String, key: String, completion: @escaping (String?, Error?) -> Void) {
+    class public func uploadData(data: Data, contentType: String, destination: String, key: String, completion: @escaping (String?, Error?) -> Void) {
         DispatchQueue.global(qos: .background).async {
             let tmpURL = NSURL(fileURLWithPath: NSTemporaryDirectory() + "/" + UUID().uuidString)
             do {
