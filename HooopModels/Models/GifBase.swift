@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 import CoreData
 
 open class GifBase: NSManagedObject, Encodable {
@@ -37,6 +38,12 @@ open class GifBase: NSManagedObject, Encodable {
                 }
                 self.frameImagesData = ret
             }
+        }
+    }
+    
+    open func callback(response:DataResponse<Any>) {
+        if (response.response?.statusCode == 200) {
+            self.delete()
         }
     }
 }
