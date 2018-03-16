@@ -1,0 +1,21 @@
+PODS:
+  - SwiftRecord (0.0.6)
+
+DEPENDENCIES:
+  - SwiftRecord (from `https://github.com/jwoodrow/SwiftRecord.git`)
+
+EXTERNAL SOURCES:
+  SwiftRecord:
+    :git: https://github.com/jwoodrow/SwiftRecord.git
+
+CHECKOUT OPTIONS:
+  SwiftRecord:
+    :commit: c36affc35ce3b3dacce88e03270e98c6244d0ec3
+    :git: https://github.com/jwoodrow/SwiftRecord.git
+
+SPEC CHECKSUMS:
+  SwiftRecord: f171e483fc63f59f4fe465a5edf51b2e5630425c
+
+PODFILE CHECKSUM: 03c573cfedf2e52c0275d8054c970b01bbbe22e6
+
+COCOAPODS: 1.4.0
