@@ -10,7 +10,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SwiftRecord:
-    :commit: c36affc35ce3b3dacce88e03270e98c6244d0ec3
+    :commit: c2cf3805077d7d68deac2ca6f4775ba6f0f9ee04
     :git: https://github.com/jwoodrow/SwiftRecord.git
 
 SPEC CHECKSUMS:
