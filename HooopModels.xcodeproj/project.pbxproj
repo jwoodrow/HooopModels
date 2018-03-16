@@ -10,6 +10,7 @@
 		C5331323CA9E28E086F79FB9 /* Pods_HooopModels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1EC142D1B5FF8CDAEA2D12D /* Pods_HooopModels.framework */; };
 		D025CC8D3F9FF92A87616C83 /* Pods_HooopModelsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE3F6DB0D32440B114FC9A19 /* Pods_HooopModelsTests.framework */; };
 		D50CE0A9205B7DFB00AA4CF7 /* SwiftRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CE0A8205B7DFB00AA4CF7 /* SwiftRecord.swift */; };
+		D50CE0AF205B829C00AA4CF7 /* S3Uploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50CE0AE205B829C00AA4CF7 /* S3Uploader.swift */; };
 		D5B5AE7D205B6D4000C57B9E /* HooopModels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B5AE73205B6D4000C57B9E /* HooopModels.framework */; };
 		D5B5AE82205B6D4000C57B9E /* HooopModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B5AE81205B6D4000C57B9E /* HooopModelsTests.swift */; };
 		D5B5AE84205B6D4000C57B9E /* HooopModels.h in Headers */ = {isa = PBXBuildFile; fileRef = D5B5AE76205B6D4000C57B9E /* HooopModels.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,6 +36,7 @@
 		B99C2C9F56EEDA57EC71A4C5 /* Pods-HooopModels.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HooopModels.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HooopModels/Pods-HooopModels.debug.xcconfig"; sourceTree = "<group>"; };
 		C1EC142D1B5FF8CDAEA2D12D /* Pods_HooopModels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HooopModels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D50CE0A8205B7DFB00AA4CF7 /* SwiftRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRecord.swift; sourceTree = "<group>"; };
+		D50CE0AE205B829C00AA4CF7 /* S3Uploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = S3Uploader.swift; sourceTree = "<group>"; };
 		D5B5AE73205B6D4000C57B9E /* HooopModels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HooopModels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B5AE76205B6D4000C57B9E /* HooopModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HooopModels.h; sourceTree = "<group>"; };
 		D5B5AE77205B6D4000C57B9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D50CE0AD205B828D00AA4CF7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D50CE0AE205B829C00AA4CF7 /* S3Uploader.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		D5B5AE69205B6D4000C57B9E = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 		D5B5AE75205B6D4000C57B9E /* HooopModels */ = {
 			isa = PBXGroup;
 			children = (
+				D50CE0AD205B828D00AA4CF7 /* Classes */,
 				D5B5AE8D205B6DB100C57B9E /* Models */,
 				D5B5AE76205B6D4000C57B9E /* HooopModels.h */,
 				D5B5AE77205B6D4000C57B9E /* Info.plist */,
@@ -272,10 +283,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HooopModelsTests/Pods-HooopModelsTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSS3/AWSS3.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSS3.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D50CE0AF205B829C00AA4CF7 /* S3Uploader.swift in Sources */,
 				D50CE0A9205B7DFB00AA4CF7 /* SwiftRecord.swift in Sources */,
 				D5B5AE94205B6E5000C57B9E /* EventBase.swift in Sources */,
 				D5B5AE92205B6DE200C57B9E /* GifBase.swift in Sources */,

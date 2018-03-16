@@ -1,12 +1,18 @@
 PODS:
   - Alamofire (4.7.0)
+  - AWSCore (2.6.11)
+  - AWSS3 (2.6.11):
+    - AWSCore (= 2.6.11)
 
 DEPENDENCIES:
   - Alamofire (= 4.7.0)
+  - AWSS3 (= 2.6.11)
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  AWSCore: a461695bf302a32a366768bf36056be3a2c87d8d
+  AWSS3: d13e29a4dbfecb7cd99b4ce833a9fe221dee8cba
 
-PODFILE CHECKSUM: 86b021efea23d56514963c489cbe6d23e4c1f5de
+PODFILE CHECKSUM: 2c1870e9338ca46fa21d8b6e3b39eabe989e2071
 
 COCOAPODS: 1.4.0
