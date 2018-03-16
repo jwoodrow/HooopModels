@@ -7,7 +7,7 @@ s.name = "HooopModels"
 s.summary = "Hooop Models used to have a cohenrence with the back end"
 s.requires_arc = true
 
-s.version = "0.0.5"
+s.version = "0.0.6"
 
 s.license = { :type => 'All rights reserved.', :text => <<-LICENSE
 Copyright (C) HOOOP, Inc - All Rights Reserved
