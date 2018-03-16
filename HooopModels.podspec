@@ -24,7 +24,6 @@ s.homepage = "https://github.com/jwoodrow/HooopModels"
 s.source = { :git => "https://github.com/jwoodrow/HooopModels.git", :tag => "#{s.version}"}
 
 s.framework = "UIKit"
-s.dependency "SwiftRecord", "~> 0.0.6"
 
 s.source_files = "HooopModels/**/*.{swift}"
 

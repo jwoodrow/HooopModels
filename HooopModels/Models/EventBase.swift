@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import SwiftRecord
 
 open class EventBase: NSManagedObject {
     @NSManaged open var id: NSNumber
