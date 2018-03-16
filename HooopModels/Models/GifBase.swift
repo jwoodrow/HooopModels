@@ -9,14 +9,14 @@
 import UIKit
 import CoreData
 
-public class GifBase: NSManagedObject, Encodable {
-    @NSManaged public var uuid: UUID
-    @NSManaged public var frameImagesData: [NSData]?
-    @NSManaged public var event: EventBase
-    @NSManaged public var clients: NSMutableOrderedSet?
-    @NSManaged public var created_at: NSDate
+open class GifBase: NSManagedObject, Encodable {
+    @NSManaged open var uuid: UUID
+    @NSManaged open var frameImagesData: [NSData]?
+    @NSManaged open var event: EventBase
+    @NSManaged open var clients: NSMutableOrderedSet?
+    @NSManaged open var created_at: NSDate
     
-    public var frameImages: [UIImage]? {
+    open var frameImages: [UIImage]? {
         get {
             if (frameImagesData == nil) {
                 return nil
