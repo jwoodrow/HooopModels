@@ -9,11 +9,11 @@
 import UIKit
 import CoreData
 
-class EventBase: NSManagedObject {
-    @NSManaged var id: NSNumber
-    @NSManaged var url_id: String
-    @NSManaged var code: String
-    @NSManaged var gifs: NSMutableOrderedSet
+public class EventBase: NSManagedObject {
+    @NSManaged public var id: NSNumber
+    @NSManaged public var url_id: String
+    @NSManaged public var code: String
+    @NSManaged public var gifs: NSMutableOrderedSet
 }
 
 

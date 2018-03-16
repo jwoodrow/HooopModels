@@ -9,9 +9,9 @@
 import UIKit
 import CoreData
 
-class ClientBase: NSManagedObject, Encodable {
-    @NSManaged var email: String?
-    @NSManaged var phone: String?
-    @NSManaged var gif: GifBase
+public class ClientBase: NSManagedObject, Encodable {
+    @NSManaged public var email: String?
+    @NSManaged public var phone: String?
+    @NSManaged public var gif: GifBase
 }
 
