@@ -7,7 +7,7 @@ s.name = "HooopModels"
 s.summary = "Hooop Models used to have a cohenrence with the back end"
 s.requires_arc = true
 
-s.version = "0.1.2"
+s.version = "0.1.3"
 
 s.license = { :type => 'All rights reserved.', :text => <<-LICENSE
 Copyright (C) HOOOP, Inc - All Rights Reserved
@@ -21,7 +21,7 @@ s.author = { "James Woodrow" => "james@hooop.fr" }
 
 s.homepage = "https://github.com/jwoodrow/HooopModels"
 
-s.source = { :git => "ssh://github.com/jwoodrow/HooopModels.git", :tag => "#{s.version}"}
+s.source = { :git => "https://github.com/jwoodrow/HooopModels.git", :tag => "#{s.version}"}
 
 s.framework = "UIKit"
 s.dependency "Alamofire", "4.8.2"
