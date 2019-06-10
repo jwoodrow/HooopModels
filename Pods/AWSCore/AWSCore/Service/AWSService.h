@@ -18,7 +18,6 @@
 #import "AWSCredentialsProvider.h"
 #import "AWSServiceEnum.h"
 
-//! SDK version for AWS Core
 FOUNDATION_EXPORT NSString *const AWSiOSSDKVersion;
 
 FOUNDATION_EXPORT NSString *const AWSServiceErrorDomain;
@@ -120,8 +119,6 @@ typedef NS_ENUM(NSInteger, AWSServiceErrorType) {
 @property (nonatomic, readonly) NSURL *URL;
 @property (nonatomic, readonly) NSString *hostName;
 @property (nonatomic, readonly) BOOL useUnsafeURL;
-
-+ (NSString *)regionNameFromType:(AWSRegionType)regionType;
 
 - (instancetype)initWithRegion:(AWSRegionType)regionType
                        service:(AWSServiceType)serviceType

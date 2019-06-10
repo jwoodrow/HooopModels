@@ -1,5 +1,5 @@
 //
-// Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
@@ -64,10 +64,8 @@
     \"jsonVersion\":\"1.1\",\
     \"protocol\":\"json\",\
     \"serviceFullName\":\"Amazon Cognito Identity\",\
-    \"serviceId\":\"Cognito Identity\",\
     \"signatureVersion\":\"v4\",\
-    \"targetPrefix\":\"AWSCognitoIdentityService\",\
-    \"uid\":\"cognito-identity-2014-06-30\"\
+    \"targetPrefix\":\"AWSCognitoIdentityService\"\
   },\
   \"operations\":{\
     \"CreateIdentityPool\":{\
@@ -86,7 +84,7 @@
         {\"shape\":\"InternalErrorException\"},\
         {\"shape\":\"LimitExceededException\"}\
       ],\
-      \"documentation\":\"<p>Creates a new identity pool. The identity pool is a store of user identity information that is specific to your AWS account. The limit on identity pools is 60 per account. The keys for <code>SupportedLoginProviders</code> are as follows:</p> <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon: <code>www.amazon.com</code> </p> </li> <li> <p>Twitter: <code>api.twitter.com</code> </p> </li> <li> <p>Digits: <code>www.digits.com</code> </p> </li> </ul> <p>You must use AWS Developer credentials to call this API.</p>\"\
+      \"documentation\":\"<p>Creates a new identity pool. The identity pool is a store of user identity information that is specific to your AWS account. The limit on identity pools is 60 per account. The keys for <code>SupportedLoginProviders</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li> <li>Google: <code>accounts.google.com</code></li> <li>Amazon: <code>www.amazon.com</code></li> <li>Twitter: <code>api.twitter.com</code></li> <li>Digits: <code>www.digits.com</code></li> </ul> You must use AWS Developer credentials to call this API.</p>\"\
     },\
     \"DeleteIdentities\":{\
       \"name\":\"DeleteIdentities\",\
@@ -101,7 +99,7 @@
         {\"shape\":\"TooManyRequestsException\"},\
         {\"shape\":\"InternalErrorException\"}\
       ],\
-      \"documentation\":\"<p>Deletes identities from an identity pool. You can specify a list of 1-60 identities that you want to delete.</p> <p>You must use AWS Developer credentials to call this API.</p>\"\
+      \"documentation\":\"<p>Deletes identities from an identity pool. You can specify a list of 1-60 identities that you want to delete.</p><p>You must use AWS Developer credentials to call this API.</p>\"\
     },\
     \"DeleteIdentityPool\":{\
       \"name\":\"DeleteIdentityPool\",\
@@ -117,7 +115,7 @@
         {\"shape\":\"TooManyRequestsException\"},\
         {\"shape\":\"InternalErrorException\"}\
       ],\
-      \"documentation\":\"<p>Deletes an identity pool. Once a pool is deleted, users will not be able to authenticate with the pool.</p> <p>You must use AWS Developer credentials to call this API.</p>\"\
+      \"documentation\":\"<p>Deletes a user pool. Once a pool is deleted, users will not be able to authenticate with the pool.</p><p>You must use AWS Developer credentials to call this API.</p>\"\
     },\
     \"DescribeIdentity\":{\
       \"name\":\"DescribeIdentity\",\
@@ -134,7 +132,7 @@
         {\"shape\":\"TooManyRequestsException\"},\
         {\"shape\":\"InternalErrorException\"}\
       ],\
-      \"documentation\":\"<p>Returns metadata related to the given identity, including when the identity was created and any associated linked logins.</p> <p>You must use AWS Developer credentials to call this API.</p>\"\
+      \"documentation\":\"<p>Returns metadata related to the given identity, including when the identity was created and any associated linked logins.</p><p>You must use AWS Developer credentials to call this API.</p>\"\
     },\
     \"DescribeIdentityPool\":{\
       \"name\":\"DescribeIdentityPool\",\
@@ -151,7 +149,7 @@
         {\"shape\":\"TooManyRequestsException\"},\
         {\"shape\":\"InternalErrorException\"}\
       ],\
-      \"documentation\":\"<p>Gets details about a particular identity pool, including the pool name, ID description, creation date, and current number of users.</p> <p>You must use AWS Developer credentials to call this API.</p>\"\
+      \"documentation\":\"<p>Gets details about a particular identity pool, including the pool name, ID description, creation date, and current number of users.</p><p>You must use AWS Developer credentials to call this API.</p>\"\
     },\
     \"GetCredentialsForIdentity\":{\
       \"name\":\"GetCredentialsForIdentity\",\
@@ -171,7 +169,7 @@
         {\"shape\":\"InternalErrorException\"},\
         {\"shape\":\"ExternalServiceException\"}\
       ],\
-      \"documentation\":\"<p>Returns credentials for the provided identity ID. Any provided logins will be validated against supported login providers. If the token is for cognito-identity.amazonaws.com, it will be passed through to AWS Security Token Service with the appropriate role for the token.</p> <p>This is a public API. You do not need any credentials to call this API.</p>\"\
+      \"documentation\":\"<p>Returns credentials for the provided identity ID. Any provided logins will be validated against supported login providers. If the token is for cognito-identity.amazonaws.com, it will be passed through to AWS Security Token Service with the appropriate role for the token.</p><p>This is a public API. You do not need any credentials to call this API.</p>\"\
     },\
     \"GetId\":{\
       \"name\":\"GetId\",\
@@ -191,7 +189,7 @@
         {\"shape\":\"LimitExceededException\"},\
         {\"shape\":\"ExternalServiceException\"}\
       ],\
-      \"documentation\":\"<p>Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit linked account.</p> <p>This is a public API. You do not need any credentials to call this API.</p>\"\
+      \"documentation\":\"<p>Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit linked account.</p><p>This is a public API. You do not need any credentials to call this API.</p>\"\
     },\
     \"GetIdentityPoolRoles\":{\
       \"name\":\"GetIdentityPoolRoles\",\
@@ -209,7 +207,7 @@
         {\"shape\":\"TooManyRequestsException\"},\
         {\"shape\":\"InternalErrorException\"}\
       ],\
-      \"documentation\":\"<p>Gets the roles for an identity pool.</p> <p>You must use AWS Developer credentials to call this API.</p>\"\
+      \"documentation\":\"<p>Gets the roles for an identity pool.</p><p>You must use AWS Developer credentials to call this API.</p>\"\
     },\
     \"GetOpenIdToken\":{\
       \"name\":\"GetOpenIdToken\",\
@@ -228,7 +226,7 @@
         {\"shape\":\"InternalErrorException\"},\
         {\"shape\":\"ExternalServiceException\"}\
       ],\
-      \"documentation\":\"<p>Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned by <a>GetId</a>. You can optionally add additional logins for the identity. Supplying multiple logins creates an implicit link.</p> <p>The OpenId token is valid for 10 minutes.</p> <p>This is a public API. You do not need any credentials to call this API.</p>\"\
+      \"documentation\":\"<p>Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned by <a>GetId</a>. You can optionally add additional logins for the identity. Supplying multiple logins creates an implicit link.</p> <p>The OpenId token is valid for 15 minutes.</p><p>This is a public API. You do not need any credentials to call this API.</p>\"\
     },\
     \"GetOpenIdTokenForDeveloperIdentity\":{\
       \"name\":\"GetOpenIdTokenForDeveloperIdentity\",\
@@ -247,7 +245,7 @@
         {\"shape\":\"InternalErrorException\"},\
         {\"shape\":\"DeveloperUserAlreadyRegisteredException\"}\
       ],\
-      \"documentation\":\"<p>Registers (or retrieves) a Cognito <code>IdentityId</code> and an OpenID Connect token for a user authenticated by your backend authentication process. Supplying multiple logins will create an implicit linked account. You can only specify one developer provider as part of the <code>Logins</code> map, which is linked to the identity pool. The developer provider is the \\\"domain\\\" by which Cognito will refer to your users.</p> <p>You can use <code>GetOpenIdTokenForDeveloperIdentity</code> to create a new identity and to link new logins (that is, user credentials issued by a public provider or developer provider) to an existing identity. When you want to create a new identity, the <code>IdentityId</code> should be null. When you want to associate a new login with an existing authenticated/unauthenticated identity, you can do so by providing the existing <code>IdentityId</code>. This API will create the identity in the specified <code>IdentityPoolId</code>.</p> <p>You must use AWS Developer credentials to call this API.</p>\"\
+      \"documentation\":\"<p>Registers (or retrieves) a Cognito <code>IdentityId</code> and an OpenID Connect token for a user authenticated by your backend authentication process. Supplying multiple logins will create an implicit linked account. You can only specify one developer provider as part of the <code>Logins</code> map, which is linked to the identity pool. The developer provider is the \\\"domain\\\" by which Cognito will refer to your users.</p> <p>You can use <code>GetOpenIdTokenForDeveloperIdentity</code> to create a new identity and to link new logins (that is, user credentials issued by a public provider or developer provider) to an existing identity. When you want to create a new identity, the <code>IdentityId</code> should be null. When you want to associate a new login with an existing authenticated/unauthenticated identity, you can do so by providing the existing <code>IdentityId</code>. This API will create the identity in the specified <code>IdentityPoolId</code>.</p><p>You must use AWS Developer credentials to call this API.</p>\"\
     },\
     \"ListIdentities\":{\
       \"name\":\"ListIdentities\",\
@@ -264,7 +262,7 @@
         {\"shape\":\"TooManyRequestsException\"},\
         {\"shape\":\"InternalErrorException\"}\
       ],\
-      \"documentation\":\"<p>Lists the identities in an identity pool.</p> <p>You must use AWS Developer credentials to call this API.</p>\"\
+      \"documentation\":\"<p>Lists the identities in a pool.</p><p>You must use AWS Developer credentials to call this API.</p>\"\
     },\
     \"ListIdentityPools\":{\
       \"name\":\"ListIdentityPools\",\
@@ -278,27 +276,9 @@
         {\"shape\":\"InvalidParameterException\"},\
         {\"shape\":\"NotAuthorizedException\"},\
         {\"shape\":\"TooManyRequestsException\"},\
-        {\"shape\":\"ResourceNotFoundException\"},\
         {\"shape\":\"InternalErrorException\"}\
       ],\
-      \"documentation\":\"<p>Lists all of the Cognito identity pools registered for your account.</p> <p>You must use AWS Developer credentials to call this API.</p>\"\
-    },\
-    \"ListTagsForResource\":{\
-      \"name\":\"ListTagsForResource\",\
-      \"http\":{\
-        \"method\":\"POST\",\
-        \"requestUri\":\"/\"\
-      },\
-      \"input\":{\"shape\":\"ListTagsForResourceInput\"},\
-      \"output\":{\"shape\":\"ListTagsForResourceResponse\"},\
-      \"errors\":[\
-        {\"shape\":\"InvalidParameterException\"},\
-        {\"shape\":\"ResourceNotFoundException\"},\
-        {\"shape\":\"NotAuthorizedException\"},\
-        {\"shape\":\"TooManyRequestsException\"},\
-        {\"shape\":\"InternalErrorException\"}\
-      ],\
-      \"documentation\":\"<p>Lists the tags that are assigned to an Amazon Cognito identity pool.</p> <p>A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p> <p>You can use this action up to 10 times per second, per account.</p>\"\
+      \"documentation\":\"<p>Lists all of the Cognito identity pools registered for your account.</p><p>You must use AWS Developer credentials to call this API.</p>\"\
     },\
     \"LookupDeveloperIdentity\":{\
       \"name\":\"LookupDeveloperIdentity\",\
@@ -316,7 +296,7 @@
         {\"shape\":\"TooManyRequestsException\"},\
         {\"shape\":\"InternalErrorException\"}\
       ],\
-      \"documentation\":\"<p>Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code> or the list of <code>DeveloperUserIdentifier</code> values associated with an <code>IdentityId</code> for an existing identity. Either <code>IdentityID</code> or <code>DeveloperUserIdentifier</code> must not be null. If you supply only one of these values, the other value will be searched in the database and returned as a part of the response. If you supply both, <code>DeveloperUserIdentifier</code> will be matched against <code>IdentityID</code>. If the values are verified against the database, the response returns both values and is the same as the request. Otherwise a <code>ResourceConflictException</code> is thrown.</p> <p> <code>LookupDeveloperIdentity</code> is intended for low-throughput control plane operations: for example, to enable customer service to locate an identity ID by username. If you are using it for higher-volume operations such as user authentication, your requests are likely to be throttled. <a>GetOpenIdTokenForDeveloperIdentity</a> is a better option for higher-volume operations for user authentication.</p> <p>You must use AWS Developer credentials to call this API.</p>\"\
+      \"documentation\":\"<p>Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code> or the list of <code>DeveloperUserIdentifier</code>s associated with an <code>IdentityId</code> for an existing identity. Either <code>IdentityID</code> or <code>DeveloperUserIdentifier</code> must not be null. If you supply only one of these values, the other value will be searched in the database and returned as a part of the response. If you supply both, <code>DeveloperUserIdentifier</code> will be matched against <code>IdentityID</code>. If the values are verified against the database, the response returns both values and is the same as the request. Otherwise a <code>ResourceConflictException</code> is thrown.</p><p>You must use AWS Developer credentials to call this API.</p>\"\
     },\
     \"MergeDeveloperIdentities\":{\
       \"name\":\"MergeDeveloperIdentities\",\
@@ -334,7 +314,7 @@
         {\"shape\":\"TooManyRequestsException\"},\
         {\"shape\":\"InternalErrorException\"}\
       ],\
-      \"documentation\":\"<p>Merges two users having different <code>IdentityId</code>s, existing in the same identity pool, and identified by the same developer provider. You can use this action to request that discrete users be merged and identified as a single user in the Cognito environment. Cognito associates the given source user (<code>SourceUserIdentifier</code>) with the <code>IdentityId</code> of the <code>DestinationUserIdentifier</code>. Only developer-authenticated users can be merged. If the users to be merged are associated with the same public provider, but as two different users, an exception will be thrown.</p> <p>The number of linked logins is limited to 20. So, the number of linked logins for the source user, <code>SourceUserIdentifier</code>, and the destination user, <code>DestinationUserIdentifier</code>, together should not be larger than 20. Otherwise, an exception will be thrown.</p> <p>You must use AWS Developer credentials to call this API.</p>\"\
+      \"documentation\":\"<p>Merges two users having different <code>IdentityId</code>s, existing in the same identity pool, and identified by the same developer provider. You can use this action to request that discrete users be merged and identified as a single user in the Cognito environment. Cognito associates the given source user (<code>SourceUserIdentifier</code>) with the <code>IdentityId</code> of the <code>DestinationUserIdentifier</code>. Only developer-authenticated users can be merged. If the users to be merged are associated with the same public provider, but as two different users, an exception will be thrown.</p><p>You must use AWS Developer credentials to call this API.</p>\"\
     },\
     \"SetIdentityPoolRoles\":{\
       \"name\":\"SetIdentityPoolRoles\",\
@@ -352,24 +332,7 @@
         {\"shape\":\"InternalErrorException\"},\
         {\"shape\":\"ConcurrentModificationException\"}\
       ],\
-      \"documentation\":\"<p>Sets the roles for an identity pool. These roles are used when making calls to <a>GetCredentialsForIdentity</a> action.</p> <p>You must use AWS Developer credentials to call this API.</p>\"\
-    },\
-    \"TagResource\":{\
-      \"name\":\"TagResource\",\
-      \"http\":{\
-        \"method\":\"POST\",\
-        \"requestUri\":\"/\"\
-      },\
-      \"input\":{\"shape\":\"TagResourceInput\"},\
-      \"output\":{\"shape\":\"TagResourceResponse\"},\
-      \"errors\":[\
-        {\"shape\":\"InvalidParameterException\"},\
-        {\"shape\":\"ResourceNotFoundException\"},\
-        {\"shape\":\"NotAuthorizedException\"},\
-        {\"shape\":\"TooManyRequestsException\"},\
-        {\"shape\":\"InternalErrorException\"}\
-      ],\
-      \"documentation\":\"<p>Assigns a set of tags to an Amazon Cognito identity pool. A tag is a label that you can use to categorize and manage identity pools in different ways, such as by purpose, owner, environment, or other criteria.</p> <p>Each tag consists of a key and value, both of which you define. A key is a general category for more specific values. For example, if you have two versions of an identity pool, one for testing and another for production, you might assign an <code>Environment</code> tag key to both identity pools. The value of this key might be <code>Test</code> for one identity pool and <code>Production</code> for the other.</p> <p>Tags are useful for cost tracking and access control. You can activate your tags so that they appear on the Billing and Cost Management console, where you can track the costs associated with your identity pools. In an IAM policy, you can constrain permissions for identity pools based on specific tags or tag values.</p> <p>You can use this action up to 5 times per second, per account. An identity pool can have as many as 50 tags.</p>\"\
+      \"documentation\":\"<p>Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code> action.</p><p>You must use AWS Developer credentials to call this API.</p>\"\
     },\
     \"UnlinkDeveloperIdentity\":{\
       \"name\":\"UnlinkDeveloperIdentity\",\
@@ -386,7 +349,7 @@
         {\"shape\":\"TooManyRequestsException\"},\
         {\"shape\":\"InternalErrorException\"}\
       ],\
-      \"documentation\":\"<p>Unlinks a <code>DeveloperUserIdentifier</code> from an existing identity. Unlinked developer users will be considered new identities next time they are seen. If, for a given Cognito identity, you remove all federated identities as well as the developer user identifier, the Cognito identity becomes inaccessible.</p> <p>You must use AWS Developer credentials to call this API.</p>\"\
+      \"documentation\":\"<p>Unlinks a <code>DeveloperUserIdentifier</code> from an existing identity. Unlinked developer users will be considered new identities next time they are seen. If, for a given Cognito identity, you remove all federated identities as well as the developer user identifier, the Cognito identity becomes inaccessible.</p><p>You must use AWS Developer credentials to call this API.</p>\"\
     },\
     \"UnlinkIdentity\":{\
       \"name\":\"UnlinkIdentity\",\
@@ -404,24 +367,7 @@
         {\"shape\":\"InternalErrorException\"},\
         {\"shape\":\"ExternalServiceException\"}\
       ],\
-      \"documentation\":\"<p>Unlinks a federated identity from an existing account. Unlinked logins will be considered new identities next time they are seen. Removing the last linked login will make this identity inaccessible.</p> <p>This is a public API. You do not need any credentials to call this API.</p>\"\
-    },\
-    \"UntagResource\":{\
-      \"name\":\"UntagResource\",\
-      \"http\":{\
-        \"method\":\"POST\",\
-        \"requestUri\":\"/\"\
-      },\
-      \"input\":{\"shape\":\"UntagResourceInput\"},\
-      \"output\":{\"shape\":\"UntagResourceResponse\"},\
-      \"errors\":[\
-        {\"shape\":\"InvalidParameterException\"},\
-        {\"shape\":\"ResourceNotFoundException\"},\
-        {\"shape\":\"NotAuthorizedException\"},\
-        {\"shape\":\"TooManyRequestsException\"},\
-        {\"shape\":\"InternalErrorException\"}\
-      ],\
-      \"documentation\":\"<p>Removes the specified tags from an Amazon Cognito identity pool. You can use this action up to 5 times per second, per account</p>\"\
+      \"documentation\":\"<p>Unlinks a federated identity from an existing account. Unlinked logins will be considered new identities next time they are seen. Removing the last linked login will make this identity inaccessible.</p><p>This is a public API. You do not need any credentials to call this API.</p>\"\
     },\
     \"UpdateIdentityPool\":{\
       \"name\":\"UpdateIdentityPool\",\
@@ -441,7 +387,7 @@
         {\"shape\":\"ConcurrentModificationException\"},\
         {\"shape\":\"LimitExceededException\"}\
       ],\
-      \"documentation\":\"<p>Updates an identity pool.</p> <p>You must use AWS Developer credentials to call this API.</p>\"\
+      \"documentation\":\"<p>Updates a user pool.</p><p>You must use AWS Developer credentials to call this API.</p>\"\
     }\
   },\
   \"shapes\":{\
@@ -457,42 +403,19 @@
       \"min\":1,\
       \"pattern\":\"\\\\d+\"\
     },\
-    \"AmbiguousRoleResolutionType\":{\
-      \"type\":\"string\",\
-      \"enum\":[\
-        \"AuthenticatedRole\",\
-        \"Deny\"\
-      ]\
-    },\
-    \"ClaimName\":{\
-      \"type\":\"string\",\
-      \"max\":64,\
-      \"min\":1,\
-      \"pattern\":\"[\\\\p{L}\\\\p{M}\\\\p{S}\\\\p{N}\\\\p{P}]+\"\
-    },\
-    \"ClaimValue\":{\
-      \"type\":\"string\",\
-      \"max\":128,\
-      \"min\":1\
-    },\
     \"CognitoIdentityProvider\":{\
       \"type\":\"structure\",\
       \"members\":{\
         \"ProviderName\":{\
           \"shape\":\"CognitoIdentityProviderName\",\
-          \"documentation\":\"<p>The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>\"\
+          \"documentation\":\"<p>The provider name for a Cognito User Identity Pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>\"\
         },\
         \"ClientId\":{\
           \"shape\":\"CognitoIdentityProviderClientId\",\
-          \"documentation\":\"<p>The client ID for the Amazon Cognito user pool.</p>\"\
-        },\
-        \"ServerSideTokenCheck\":{\
-          \"shape\":\"CognitoIdentityProviderTokenCheck\",\
-          \"documentation\":\"<p>TRUE if server-side token validation is enabled for the identity providerâs token.</p> <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p> <p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>\",\
-          \"box\":true\
+          \"documentation\":\"<p>The client ID for the Cognito User Identity Pool.</p>\"\
         }\
       },\
-      \"documentation\":\"<p>A provider representing an Amazon Cognito user pool and its client ID.</p>\"\
+      \"documentation\":\"<p>A provider representing a Cognito User Identity Pool and its client ID.</p>\"\
     },\
     \"CognitoIdentityProviderClientId\":{\
       \"type\":\"string\",\
@@ -510,7 +433,6 @@
       \"min\":1,\
       \"pattern\":\"[\\\\w._:/-]+\"\
     },\
-    \"CognitoIdentityProviderTokenCheck\":{\"type\":\"boolean\"},\
     \"ConcurrentModificationException\":{\
       \"type\":\"structure\",\
       \"members\":{\
@@ -551,16 +473,9 @@
         },\
         \"CognitoIdentityProviders\":{\
           \"shape\":\"CognitoIdentityProviderList\",\
-          \"documentation\":\"<p>An array of Amazon Cognito user pools and their client IDs.</p>\"\
+          \"documentation\":\"<p>A list representing a Cognito User Identity Pool and its client ID.</p>\"\
         },\
-        \"SamlProviderARNs\":{\
-          \"shape\":\"SAMLProviderList\",\
-          \"documentation\":\"<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\"\
-        },\
-        \"IdentityPoolTags\":{\
-          \"shape\":\"IdentityPoolTagsType\",\
-          \"documentation\":\"<p>Tags to assign to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>\"\
-        }\
+        \"SamlProviderARNs\":{\"shape\":\"SAMLProviderList\"}\
       },\
       \"documentation\":\"<p>Input to the CreateIdentityPool action.</p>\"\
     },\
@@ -614,7 +529,7 @@
       \"members\":{\
         \"IdentityPoolId\":{\
           \"shape\":\"IdentityPoolId\",\
-          \"documentation\":\"<p>An identity pool ID in the format REGION:GUID.</p>\"\
+          \"documentation\":\"An identity pool ID in the format REGION:GUID.\"\
         }\
       },\
       \"documentation\":\"<p>Input to the DeleteIdentityPool action.</p>\"\
@@ -636,10 +551,10 @@
       \"members\":{\
         \"IdentityPoolId\":{\
           \"shape\":\"IdentityPoolId\",\
-          \"documentation\":\"<p>An identity pool ID in the format REGION:GUID.</p>\"\
+          \"documentation\":\"An identity pool ID in the format REGION:GUID.\"\
         }\
       },\
-      \"documentation\":\"<p>Input to the DescribeIdentityPool action.</p>\"\
+      \"documentation\":\"Input to the DescribeIdentityPool action.\"\
     },\
     \"DeveloperProviderName\":{\
       \"type\":\"string\",\
@@ -661,7 +576,8 @@
     \"DeveloperUserIdentifier\":{\
       \"type\":\"string\",\
       \"max\":1024,\
-      \"min\":1\
+      \"min\":1,\
+      \"pattern\":\"[\\\\w.@_-]+\"\
     },\
     \"DeveloperUserIdentifierList\":{\
       \"type\":\"list\",\
@@ -695,12 +611,9 @@
         },\
         \"Logins\":{\
           \"shape\":\"LoginsMap\",\
-          \"documentation\":\"<p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax \\\"provider_name\\\": \\\"provider_user_identifier\\\".</p> <p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p> <p>The Logins parameter is required when using identities associated with external identity providers such as FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a href=\\\"http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html\\\">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>\"\
+          \"documentation\":\"<p>A set of optional name-value pairs that map provider names to provider tokens.</p>\"\
         },\
-        \"CustomRoleArn\":{\
-          \"shape\":\"ARNString\",\
-          \"documentation\":\"<p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>\"\
-        }\
+        \"CustomRoleArn\":{\"shape\":\"ARNString\"}\
       },\
       \"documentation\":\"<p>Input to the <code>GetCredentialsForIdentity</code> action.</p>\"\
     },\
@@ -724,28 +637,28 @@
       \"members\":{\
         \"AccountId\":{\
           \"shape\":\"AccountId\",\
-          \"documentation\":\"<p>A standard AWS account ID (9+ digits).</p>\"\
+          \"documentation\":\"A standard AWS account ID (9+ digits).\"\
         },\
         \"IdentityPoolId\":{\
           \"shape\":\"IdentityPoolId\",\
-          \"documentation\":\"<p>An identity pool ID in the format REGION:GUID.</p>\"\
+          \"documentation\":\"An identity pool ID in the format REGION:GUID.\"\
         },\
         \"Logins\":{\
           \"shape\":\"LoginsMap\",\
-          \"documentation\":\"<p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p> <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon Cognito user pool: <code>cognito-idp.&lt;region&gt;.amazonaws.com/&lt;YOUR_USER_POOL_ID&gt;</code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li> <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon: <code>www.amazon.com</code> </p> </li> <li> <p>Twitter: <code>api.twitter.com</code> </p> </li> <li> <p>Digits: <code>www.digits.com</code> </p> </li> </ul>\"\
+          \"documentation\":\"<p>A set of optional name-value pairs that map provider names to provider tokens.</p> <p>The available provider names for <code>Logins</code> are as follows: <ul> <li>Facebook: <code>graph.facebook.com</code></li> <li>Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code></li> <li>Google: <code>accounts.google.com</code></li> <li>Amazon: <code>www.amazon.com</code></li> <li>Twitter: <code>api.twitter.com</code></li> <li>Digits: <code>www.digits.com</code></li> </ul> </p>\"\
         }\
       },\
-      \"documentation\":\"<p>Input to the GetId action.</p>\"\
+      \"documentation\":\"Input to the GetId action.\"\
     },\
     \"GetIdResponse\":{\
       \"type\":\"structure\",\
       \"members\":{\
         \"IdentityId\":{\
           \"shape\":\"IdentityId\",\
-          \"documentation\":\"<p>A unique identifier in the format REGION:GUID.</p>\"\
+          \"documentation\":\"A unique identifier in the format REGION:GUID.\"\
         }\
       },\
-      \"documentation\":\"<p>Returned in response to a GetId request.</p>\"\
+      \"documentation\":\"Returned in response to a GetId request.\"\
     },\
     \"GetIdentityPoolRolesInput\":{\
       \"type\":\"structure\",\
@@ -768,10 +681,6 @@
         \"Roles\":{\
           \"shape\":\"RolesMap\",\
           \"documentation\":\"<p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>\"\
-        },\
-        \"RoleMappings\":{\
-          \"shape\":\"RoleMappingMap\",\
-          \"documentation\":\"<p>How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object map. The string identifies the identity provider, for example, \\\"graph.facebook.com\\\" or \\\"cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\\\".</p>\"\
         }\
       },\
       \"documentation\":\"<p>Returned in response to a successful <code>GetIdentityPoolRoles</code> operation.</p>\"\
@@ -822,28 +731,28 @@
       \"members\":{\
         \"IdentityId\":{\
           \"shape\":\"IdentityId\",\
-          \"documentation\":\"<p>A unique identifier in the format REGION:GUID.</p>\"\
+          \"documentation\":\"A unique identifier in the format REGION:GUID.\"\
         },\
         \"Logins\":{\
           \"shape\":\"LoginsMap\",\
-          \"documentation\":\"<p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any other OpenId Connect provider, always include the <code>id_token</code>.</p>\"\
+          \"documentation\":\"<p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito Identity Provider, or any other OpenId Connect provider, always include the <code>id_token</code>.</p>\"\
         }\
       },\
-      \"documentation\":\"<p>Input to the GetOpenIdToken action.</p>\"\
+      \"documentation\":\"Input to the GetOpenIdToken action.\"\
     },\
     \"GetOpenIdTokenResponse\":{\
       \"type\":\"structure\",\
       \"members\":{\
         \"IdentityId\":{\
           \"shape\":\"IdentityId\",\
-          \"documentation\":\"<p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.</p>\"\
+          \"documentation\":\"A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.\"\
         },\
         \"Token\":{\
           \"shape\":\"OIDCToken\",\
-          \"documentation\":\"<p>An OpenID token, valid for 10 minutes.</p>\"\
+          \"documentation\":\"An OpenID token, valid for 15 minutes.\"\
         }\
       },\
-      \"documentation\":\"<p>Returned in response to a successful GetOpenIdToken request.</p>\"\
+      \"documentation\":\"Returned in response to a successful GetOpenIdToken request.\"\
     },\
     \"HideDisabled\":{\"type\":\"boolean\"},\
     \"IdentitiesList\":{\
@@ -855,11 +764,11 @@
       \"members\":{\
         \"IdentityId\":{\
           \"shape\":\"IdentityId\",\
-          \"documentation\":\"<p>A unique identifier in the format REGION:GUID.</p>\"\
+          \"documentation\":\"A unique identifier in the format REGION:GUID.\"\
         },\
         \"Logins\":{\
           \"shape\":\"LoginsList\",\
-          \"documentation\":\"<p>The provider names.</p>\"\
+          \"documentation\":\"A set of optional name-value pairs that map provider names to provider tokens.\"\
         },\
         \"CreationDate\":{\
           \"shape\":\"DateType\",\
@@ -870,7 +779,7 @@
           \"documentation\":\"<p>Date on which the identity was last modified.</p>\"\
         }\
       },\
-      \"documentation\":\"<p>A description of the identity.</p>\"\
+      \"documentation\":\"A description of the identity.\"\
     },\
     \"IdentityId\":{\
       \"type\":\"string\",\
@@ -894,7 +803,7 @@
       \"members\":{\
         \"IdentityPoolId\":{\
           \"shape\":\"IdentityPoolId\",\
-          \"documentation\":\"<p>An identity pool ID in the format REGION:GUID.</p>\"\
+          \"documentation\":\"An identity pool ID in the format REGION:GUID.\"\
         },\
         \"IdentityPoolName\":{\
           \"shape\":\"IdentityPoolName\",\
@@ -902,7 +811,7 @@
         },\
         \"AllowUnauthenticatedIdentities\":{\
           \"shape\":\"IdentityPoolUnauthenticated\",\
-          \"documentation\":\"<p>TRUE if the identity pool supports unauthenticated logins.</p>\"\
+          \"documentation\":\"TRUE if the identity pool supports unauthenticated logins.\"\
         },\
         \"SupportedLoginProviders\":{\
           \"shape\":\"IdentityProviders\",\
@@ -918,18 +827,11 @@
         },\
         \"CognitoIdentityProviders\":{\
           \"shape\":\"CognitoIdentityProviderList\",\
-          \"documentation\":\"<p>A list representing an Amazon Cognito user pool and its client ID.</p>\"\
+          \"documentation\":\"<p>A list representing a Cognito User Identity Pool and its client ID.</p>\"\
         },\
-        \"SamlProviderARNs\":{\
-          \"shape\":\"SAMLProviderList\",\
-          \"documentation\":\"<p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>\"\
-        },\
-        \"IdentityPoolTags\":{\
-          \"shape\":\"IdentityPoolTagsType\",\
-          \"documentation\":\"<p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>\"\
-        }\
+        \"SamlProviderARNs\":{\"shape\":\"SAMLProviderList\"}\
       },\
-      \"documentation\":\"<p>An object representing an Amazon Cognito identity pool.</p>\"\
+      \"documentation\":\"An object representing a Cognito identity pool.\"\
     },\
     \"IdentityPoolId\":{\
       \"type\":\"string\",\
@@ -948,23 +850,14 @@
       \"members\":{\
         \"IdentityPoolId\":{\
           \"shape\":\"IdentityPoolId\",\
-          \"documentation\":\"<p>An identity pool ID in the format REGION:GUID.</p>\"\
+          \"documentation\":\"An identity pool ID in the format REGION:GUID.\"\
         },\
         \"IdentityPoolName\":{\
           \"shape\":\"IdentityPoolName\",\
-          \"documentation\":\"<p>A string that you provide.</p>\"\
+          \"documentation\":\"A string that you provide.\"\
         }\
       },\
-      \"documentation\":\"<p>A description of the identity pool.</p>\"\
-    },\
-    \"IdentityPoolTagsListType\":{\
-      \"type\":\"list\",\
-      \"member\":{\"shape\":\"TagKeysType\"}\
-    },\
-    \"IdentityPoolTagsType\":{\
-      \"type\":\"map\",\
-      \"key\":{\"shape\":\"TagKeysType\"},\
-      \"value\":{\"shape\":\"TagValueType\"}\
+      \"documentation\":\"A description of the identity pool.\"\
     },\
     \"IdentityPoolUnauthenticated\":{\"type\":\"boolean\"},\
     \"IdentityPoolsList\":{\
@@ -998,10 +891,10 @@
       \"members\":{\
         \"message\":{\
           \"shape\":\"String\",\
-          \"documentation\":\"<p>The message returned by an InternalErrorException.</p>\"\
+          \"documentation\":\"The message returned by an InternalErrorException.\"\
         }\
       },\
-      \"documentation\":\"<p>Thrown when the service encounters an error during processing the request.</p>\",\
+      \"documentation\":\"Thrown when the service encounters an error during processing the request.\",\
       \"exception\":true,\
       \"fault\":true\
     },\
@@ -1010,7 +903,7 @@
       \"members\":{\
         \"message\":{\
           \"shape\":\"String\",\
-          \"documentation\":\"<p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code> </p>\"\
+          \"documentation\":\"<p>The message returned for an <code>InvalidIdentityPoolConfigurationException</code></p>\"\
         }\
       },\
       \"documentation\":\"<p>Thrown if the identity pool has no role associated for the given auth type (auth/unauth) or if the AssumeRole fails.</p>\",\
@@ -1021,10 +914,10 @@
       \"members\":{\
         \"message\":{\
           \"shape\":\"String\",\
-          \"documentation\":\"<p>The message returned by an InvalidParameterException.</p>\"\
+          \"documentation\":\"The message returned by an InvalidParameterException.\"\
         }\
       },\
-      \"documentation\":\"<p>Thrown for missing or bad input parameter(s).</p>\",\
+      \"documentation\":\"Thrown for missing or bad input parameter(s).\",\
       \"exception\":true\
     },\
     \"LimitExceededException\":{\
@@ -1032,10 +925,10 @@
       \"members\":{\
         \"message\":{\
           \"shape\":\"String\",\
-          \"documentation\":\"<p>The message returned by a LimitExceededException.</p>\"\
+          \"documentation\":\"The message returned by a LimitExceededException.\"\
         }\
       },\
-      \"documentation\":\"<p>Thrown when the total number of user pools has exceeded a preset limit.</p>\",\
+      \"documentation\":\"Thrown when the total number of user pools has exceeded a preset limit.\",\
       \"exception\":true\
     },\
     \"ListIdentitiesInput\":{\
@@ -1047,40 +940,40 @@
       \"members\":{\
         \"IdentityPoolId\":{\
           \"shape\":\"IdentityPoolId\",\
-          \"documentation\":\"<p>An identity pool ID in the format REGION:GUID.</p>\"\
+          \"documentation\":\"An identity pool ID in the format REGION:GUID.\"\
         },\
         \"MaxResults\":{\
           \"shape\":\"QueryLimit\",\
-          \"documentation\":\"<p>The maximum number of identities to return.</p>\"\
+          \"documentation\":\"The maximum number of identities to return.\"\
         },\
         \"NextToken\":{\
           \"shape\":\"PaginationKey\",\
-          \"documentation\":\"<p>A pagination token.</p>\"\
+          \"documentation\":\"A pagination token.\"\
         },\
         \"HideDisabled\":{\
           \"shape\":\"HideDisabled\",\
           \"documentation\":\"<p>An optional boolean parameter that allows you to hide disabled identities. If omitted, the ListIdentities API will include disabled identities in the response.</p>\"\
         }\
       },\
-      \"documentation\":\"<p>Input to the ListIdentities action.</p>\"\
+      \"documentation\":\"Input to the ListIdentities action.\"\
     },\
     \"ListIdentitiesResponse\":{\
       \"type\":\"structure\",\
       \"members\":{\
         \"IdentityPoolId\":{\
           \"shape\":\"IdentityPoolId\",\
-          \"documentation\":\"<p>An identity pool ID in the format REGION:GUID.</p>\"\
+          \"documentation\":\"An identity pool ID in the format REGION:GUID.\"\
         },\
         \"Identities\":{\
           \"shape\":\"IdentitiesList\",\
-          \"documentation\":\"<p>An object containing a set of identities and associated mappings.</p>\"\
+          \"documentation\":\"An object containing a set of identities and associated mappings.\"\
         },\
         \"NextToken\":{\
           \"shape\":\"PaginationKey\",\
-          \"documentation\":\"<p>A pagination token.</p>\"\
+          \"documentation\":\"A pagination token.\"\
         }\
       },\
-      \"documentation\":\"<p>The response to a ListIdentities request.</p>\"\
+      \"documentation\":\"The response to a ListIdentities request.\"\
     },\
     \"ListIdentityPoolsInput\":{\
       \"type\":\"structure\",\
@@ -1088,47 +981,28 @@
       \"members\":{\
         \"MaxResults\":{\
           \"shape\":\"QueryLimit\",\
-          \"documentation\":\"<p>The maximum number of identities to return.</p>\"\
+          \"documentation\":\"The maximum number of identities to return.\"\
         },\
         \"NextToken\":{\
           \"shape\":\"PaginationKey\",\
-          \"documentation\":\"<p>A pagination token.</p>\"\
+          \"documentation\":\"A pagination token.\"\
         }\
       },\
-      \"documentation\":\"<p>Input to the ListIdentityPools action.</p>\"\
+      \"documentation\":\"Input to the ListIdentityPools action.\"\
     },\
     \"ListIdentityPoolsResponse\":{\
       \"type\":\"structure\",\
       \"members\":{\
         \"IdentityPools\":{\
           \"shape\":\"IdentityPoolsList\",\
-          \"documentation\":\"<p>The identity pools returned by the ListIdentityPools action.</p>\"\
+          \"documentation\":\"The identity pools returned by the ListIdentityPools action.\"\
         },\
         \"NextToken\":{\
           \"shape\":\"PaginationKey\",\
-          \"documentation\":\"<p>A pagination token.</p>\"\
+          \"documentation\":\"A pagination token.\"\
         }\
       },\
-      \"documentation\":\"<p>The result of a successful ListIdentityPools action.</p>\"\
-    },\
-    \"ListTagsForResourceInput\":{\
-      \"type\":\"structure\",\
-      \"required\":[\"ResourceArn\"],\
-      \"members\":{\
-        \"ResourceArn\":{\
-          \"shape\":\"ARNString\",\
-          \"documentation\":\"<p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.</p>\"\
-        }\
-      }\
-    },\
-    \"ListTagsForResourceResponse\":{\
-      \"type\":\"structure\",\
-      \"members\":{\
-        \"Tags\":{\
-          \"shape\":\"IdentityPoolTagsType\",\
-          \"documentation\":\"<p>The tags that are assigned to the identity pool.</p>\"\
-        }\
-      }\
+      \"documentation\":\"The result of a successful ListIdentityPools action.\"\
     },\
     \"LoginsList\":{\
       \"type\":\"list\",\
@@ -1185,49 +1059,6 @@
       },\
       \"documentation\":\"<p>Returned in response to a successful <code>LookupDeveloperIdentity</code> action.</p>\"\
     },\
-    \"MappingRule\":{\
-      \"type\":\"structure\",\
-      \"required\":[\
-        \"Claim\",\
-        \"MatchType\",\
-        \"Value\",\
-        \"RoleARN\"\
-      ],\
-      \"members\":{\
-        \"Claim\":{\
-          \"shape\":\"ClaimName\",\
-          \"documentation\":\"<p>The claim name that must be present in the token, for example, \\\"isAdmin\\\" or \\\"paid\\\".</p>\"\
-        },\
-        \"MatchType\":{\
-          \"shape\":\"MappingRuleMatchType\",\
-          \"documentation\":\"<p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>\"\
-        },\
-        \"Value\":{\
-          \"shape\":\"ClaimValue\",\
-          \"documentation\":\"<p>A brief string that the claim must match, for example, \\\"paid\\\" or \\\"yes\\\".</p>\"\
-        },\
-        \"RoleARN\":{\
-          \"shape\":\"ARNString\",\
-          \"documentation\":\"<p>The role ARN.</p>\"\
-        }\
-      },\
-      \"documentation\":\"<p>A rule that maps a claim name, a claim value, and a match type to a role ARN.</p>\"\
-    },\
-    \"MappingRuleMatchType\":{\
-      \"type\":\"string\",\
-      \"enum\":[\
-        \"Equals\",\
-        \"Contains\",\
-        \"StartsWith\",\
-        \"NotEqual\"\
-      ]\
-    },\
-    \"MappingRulesList\":{\
-      \"type\":\"list\",\
-      \"member\":{\"shape\":\"MappingRule\"},\
-      \"max\":25,\
-      \"min\":1\
-    },\
     \"MergeDeveloperIdentitiesInput\":{\
       \"type\":\"structure\",\
       \"required\":[\
@@ -1271,10 +1102,10 @@
       \"members\":{\
         \"message\":{\
           \"shape\":\"String\",\
-          \"documentation\":\"<p>The message returned by a NotAuthorizedException</p>\"\
+          \"documentation\":\"The message returned by a NotAuthorizedException\"\
         }\
       },\
-      \"documentation\":\"<p>Thrown when a user is not authorized to access the requested resource.</p>\",\
+      \"documentation\":\"Thrown when a user is not authorized to access the requested resource.\",\
       \"exception\":true\
     },\
     \"OIDCProviderList\":{\
@@ -1297,10 +1128,10 @@
       \"members\":{\
         \"message\":{\
           \"shape\":\"String\",\
-          \"documentation\":\"<p>The message returned by a ResourceConflictException.</p>\"\
+          \"documentation\":\"The message returned by a ResourceConflictException.\"\
         }\
       },\
-      \"documentation\":\"<p>Thrown when a user tries to use a login which is already linked to another account.</p>\",\
+      \"documentation\":\"Thrown when a user tries to use a login which is already linked to another account.\",\
       \"exception\":true\
     },\
     \"ResourceNotFoundException\":{\
@@ -1308,43 +1139,11 @@
       \"members\":{\
         \"message\":{\
           \"shape\":\"String\",\
-          \"documentation\":\"<p>The message returned by a ResourceNotFoundException.</p>\"\
+          \"documentation\":\"The message returned by a ResourceNotFoundException.\"\
         }\
       },\
-      \"documentation\":\"<p>Thrown when the requested resource (for example, a dataset or record) does not exist.</p>\",\
+      \"documentation\":\"Thrown when the requested resource (for example, a dataset or record) does not exist.\",\
       \"exception\":true\
-    },\
-    \"RoleMapping\":{\
-      \"type\":\"structure\",\
-      \"required\":[\"Type\"],\
-      \"members\":{\
-        \"Type\":{\
-          \"shape\":\"RoleMappingType\",\
-          \"documentation\":\"<p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>\"\
-        },\
-        \"AmbiguousRoleResolution\":{\
-          \"shape\":\"AmbiguousRoleResolutionType\",\
-          \"documentation\":\"<p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p> <p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>\"\
-        },\
-        \"RulesConfiguration\":{\
-          \"shape\":\"RulesConfigurationType\",\
-          \"documentation\":\"<p>The rules to be used for mapping users to roles.</p> <p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>\"\
-        }\
-      },\
-      \"documentation\":\"<p>A role mapping.</p>\"\
-    },\
-    \"RoleMappingMap\":{\
-      \"type\":\"map\",\
-      \"key\":{\"shape\":\"IdentityProviderName\"},\
-      \"value\":{\"shape\":\"RoleMapping\"},\
-      \"max\":10\
-    },\
-    \"RoleMappingType\":{\
-      \"type\":\"string\",\
-      \"enum\":[\
-        \"Token\",\
-        \"Rules\"\
-      ]\
     },\
     \"RoleType\":{\
       \"type\":\"string\",\
@@ -1355,17 +1154,6 @@
       \"key\":{\"shape\":\"RoleType\"},\
       \"value\":{\"shape\":\"ARNString\"},\
       \"max\":2\
-    },\
-    \"RulesConfigurationType\":{\
-      \"type\":\"structure\",\
-      \"required\":[\"Rules\"],\
-      \"members\":{\
-        \"Rules\":{\
-          \"shape\":\"MappingRulesList\",\
-          \"documentation\":\"<p>An array of rules. You can specify up to 25 rules per identity provider.</p> <p>Rules are evaluated in order. The first one to match specifies the role.</p>\"\
-        }\
-      },\
-      \"documentation\":\"<p>A container for rules.</p>\"\
     },\
     \"SAMLProviderList\":{\
       \"type\":\"list\",\
@@ -1387,44 +1175,11 @@
         \"Roles\":{\
           \"shape\":\"RolesMap\",\
           \"documentation\":\"<p>The map of roles associated with this pool. For a given role, the key will be either \\\"authenticated\\\" or \\\"unauthenticated\\\" and the value will be the Role ARN.</p>\"\
-        },\
-        \"RoleMappings\":{\
-          \"shape\":\"RoleMappingMap\",\
-          \"documentation\":\"<p>How users for a specific identity provider are to mapped to roles. This is a string to <a>RoleMapping</a> object map. The string identifies the identity provider, for example, \\\"graph.facebook.com\\\" or \\\"cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id\\\".</p> <p>Up to 25 rules can be specified per identity provider.</p>\"\
         }\
       },\
       \"documentation\":\"<p>Input to the <code>SetIdentityPoolRoles</code> action.</p>\"\
     },\
     \"String\":{\"type\":\"string\"},\
-    \"TagKeysType\":{\
-      \"type\":\"string\",\
-      \"max\":128,\
-      \"min\":1\
-    },\
-    \"TagResourceInput\":{\
-      \"type\":\"structure\",\
-      \"required\":[\"ResourceArn\"],\
-      \"members\":{\
-        \"ResourceArn\":{\
-          \"shape\":\"ARNString\",\
-          \"documentation\":\"<p>The Amazon Resource Name (ARN) of the identity pool to assign the tags to.</p>\"\
-        },\
-        \"Tags\":{\
-          \"shape\":\"IdentityPoolTagsType\",\
-          \"documentation\":\"<p>The tags to assign to the identity pool.</p>\"\
-        }\
-      }\
-    },\
-    \"TagResourceResponse\":{\
-      \"type\":\"structure\",\
-      \"members\":{\
-      }\
-    },\
-    \"TagValueType\":{\
-      \"type\":\"string\",\
-      \"max\":256,\
-      \"min\":0\
-    },\
     \"TokenDuration\":{\
       \"type\":\"long\",\
       \"max\":86400,\
@@ -1435,10 +1190,10 @@
       \"members\":{\
         \"message\":{\
           \"shape\":\"String\",\
-          \"documentation\":\"<p>Message returned by a TooManyRequestsException</p>\"\
+          \"documentation\":\"Message returned by a TooManyRequestsException\"\
         }\
       },\
-      \"documentation\":\"<p>Thrown when a request is throttled.</p>\",\
+      \"documentation\":\"Thrown when a request is throttled.\",\
       \"exception\":true\
     },\
     \"UnlinkDeveloperIdentityInput\":{\
@@ -1464,7 +1219,7 @@
         },\
         \"DeveloperUserIdentifier\":{\
           \"shape\":\"DeveloperUserIdentifier\",\
-          \"documentation\":\"<p>A unique ID used by your backend authentication process to identify a user.</p>\"\
+          \"documentation\":\"A unique ID used by your backend authentication process to identify a user.\"\
         }\
       },\
       \"documentation\":\"<p>Input to the <code>UnlinkDeveloperIdentity</code> action.</p>\"\
@@ -1479,18 +1234,18 @@
       \"members\":{\
         \"IdentityId\":{\
           \"shape\":\"IdentityId\",\
-          \"documentation\":\"<p>A unique identifier in the format REGION:GUID.</p>\"\
+          \"documentation\":\"A unique identifier in the format REGION:GUID.\"\
         },\
         \"Logins\":{\
           \"shape\":\"LoginsMap\",\
-          \"documentation\":\"<p>A set of optional name-value pairs that map provider names to provider tokens.</p>\"\
+          \"documentation\":\"A set of optional name-value pairs that map provider names to provider tokens.\"\
         },\
         \"LoginsToRemove\":{\
           \"shape\":\"LoginsList\",\
-          \"documentation\":\"<p>Provider names to unlink from this identity.</p>\"\
+          \"documentation\":\"Provider names to unlink from this identity.\"\
         }\
       },\
-      \"documentation\":\"<p>Input to the UnlinkIdentity action.</p>\"\
+      \"documentation\":\"Input to the UnlinkIdentity action.\"\
     },\
     \"UnprocessedIdentityId\":{\
       \"type\":\"structure\",\
@@ -1510,28 +1265,9 @@
       \"type\":\"list\",\
       \"member\":{\"shape\":\"UnprocessedIdentityId\"},\
       \"max\":60\
-    },\
-    \"UntagResourceInput\":{\
-      \"type\":\"structure\",\
-      \"required\":[\"ResourceArn\"],\
-      \"members\":{\
-        \"ResourceArn\":{\
-          \"shape\":\"ARNString\",\
-          \"documentation\":\"<p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.</p>\"\
-        },\
-        \"TagKeys\":{\
-          \"shape\":\"IdentityPoolTagsListType\",\
-          \"documentation\":\"<p>The keys of the tags to remove from the user pool.</p>\"\
-        }\
-      }\
-    },\
-    \"UntagResourceResponse\":{\
-      \"type\":\"structure\",\
-      \"members\":{\
-      }\
     }\
   },\
-  \"documentation\":\"<fullname>Amazon Cognito Federated Identities</fullname> <p>Amazon Cognito Federated Identities is a web service that delivers scoped temporary credentials to mobile devices and other untrusted environments. It uniquely identifies a device and supplies the user with a consistent identity over the lifetime of an application.</p> <p>Using Amazon Cognito Federated Identities, you can enable authentication with one or more third-party identity providers (Facebook, Google, or Login with Amazon) or an Amazon Cognito user pool, and you can also choose to support unauthenticated access from your app. Cognito delivers a unique identifier for each user and acts as an OpenID token provider trusted by AWS Security Token Service (STS) to access temporary, limited-privilege AWS credentials.</p> <p>For a description of the authentication flow from the Amazon Cognito Developer Guide see <a href=\\\"https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html\\\">Authentication Flow</a>.</p> <p>For more information see <a href=\\\"https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html\\\">Amazon Cognito Federated Identities</a>.</p>\"\
+  \"documentation\":\"<fullname>Amazon Cognito</fullname> <p>Amazon Cognito is a web service that delivers scoped temporary credentials to mobile devices and other untrusted environments. Amazon Cognito uniquely identifies a device and supplies the user with a consistent identity over the lifetime of an application.</p> <p>Using Amazon Cognito, you can enable authentication with one or more third-party identity providers (Facebook, Google, or Login with Amazon), and you can also choose to support unauthenticated access from your app. Cognito delivers a unique identifier for each user and acts as an OpenID token provider trusted by AWS Security Token Service (STS) to access temporary, limited-privilege AWS credentials.</p> <p>To provide end-user credentials, first make an unsigned call to <a>GetId</a>. If the end user is authenticated with one of the supported identity providers, set the <code>Logins</code> map with the identity provider token. <code>GetId</code> returns a unique identifier for the user.</p> <p>Next, make an unsigned call to <a>GetCredentialsForIdentity</a>. This call expects the same <code>Logins</code> map as the <code>GetId</code> call, as well as the <code>IdentityID</code> originally returned by <code>GetId</code>. Assuming your identity pool has been configured via the <a>SetIdentityPoolRoles</a> operation, <code>GetCredentialsForIdentity</code> will return AWS credentials for your use. If your pool has not been configured with <code>SetIdentityPoolRoles</code>, or if you want to follow legacy flow, make an unsigned call to <a>GetOpenIdToken</a>, which returns the OpenID token necessary to call STS and retrieve AWS credentials. This call expects the same <code>Logins</code> map as the <code>GetId</code> call, as well as the <code>IdentityID</code> originally returned by <code>GetId</code>. The token returned by <code>GetOpenIdToken</code> can be passed to the STS operation <a href=\\\"http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html\\\">AssumeRoleWithWebIdentity</a> to retrieve AWS credentials.</p> <p>If you want to use Amazon Cognito in an Android, iOS, or Unity application, you will probably want to make API calls via the AWS Mobile SDK. To learn more, see the <a href=\\\"http://docs.aws.amazon.com/mobile/index.html\\\">AWS Mobile SDK Developer Guide</a>.</p>\"\
 }\
 ";
 }

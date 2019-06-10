@@ -1,5 +1,5 @@
 //
-// Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
@@ -36,30 +36,10 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityErrorType) {
     AWSCognitoIdentityErrorTooManyRequests,
 };
 
-typedef NS_ENUM(NSInteger, AWSCognitoIdentityAmbiguousRoleResolutionType) {
-    AWSCognitoIdentityAmbiguousRoleResolutionTypeUnknown,
-    AWSCognitoIdentityAmbiguousRoleResolutionTypeAuthenticatedRole,
-    AWSCognitoIdentityAmbiguousRoleResolutionTypeDeny,
-};
-
 typedef NS_ENUM(NSInteger, AWSCognitoIdentityErrorCode) {
     AWSCognitoIdentityErrorCodeUnknown,
     AWSCognitoIdentityErrorCodeAccessDenied,
     AWSCognitoIdentityErrorCodeInternalServerError,
-};
-
-typedef NS_ENUM(NSInteger, AWSCognitoIdentityMappingRuleMatchType) {
-    AWSCognitoIdentityMappingRuleMatchTypeUnknown,
-    AWSCognitoIdentityMappingRuleMatchTypeEquals,
-    AWSCognitoIdentityMappingRuleMatchTypeContains,
-    AWSCognitoIdentityMappingRuleMatchTypeStartsWith,
-    AWSCognitoIdentityMappingRuleMatchTypeNotEqual,
-};
-
-typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
-    AWSCognitoIdentityRoleMappingTypeUnknown,
-    AWSCognitoIdentityRoleMappingTypeToken,
-    AWSCognitoIdentityRoleMappingTypeRules,
 };
 
 @class AWSCognitoIdentityCognitoIdentityProvider;
@@ -87,44 +67,30 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 @class AWSCognitoIdentityListIdentitiesResponse;
 @class AWSCognitoIdentityListIdentityPoolsInput;
 @class AWSCognitoIdentityListIdentityPoolsResponse;
-@class AWSCognitoIdentityListTagsForResourceInput;
-@class AWSCognitoIdentityListTagsForResourceResponse;
 @class AWSCognitoIdentityLookupDeveloperIdentityInput;
 @class AWSCognitoIdentityLookupDeveloperIdentityResponse;
-@class AWSCognitoIdentityMappingRule;
 @class AWSCognitoIdentityMergeDeveloperIdentitiesInput;
 @class AWSCognitoIdentityMergeDeveloperIdentitiesResponse;
-@class AWSCognitoIdentityRoleMapping;
-@class AWSCognitoIdentityRulesConfigurationType;
 @class AWSCognitoIdentitySetIdentityPoolRolesInput;
-@class AWSCognitoIdentityTagResourceInput;
-@class AWSCognitoIdentityTagResourceResponse;
 @class AWSCognitoIdentityUnlinkDeveloperIdentityInput;
 @class AWSCognitoIdentityUnlinkIdentityInput;
 @class AWSCognitoIdentityUnprocessedIdentityId;
-@class AWSCognitoIdentityUntagResourceInput;
-@class AWSCognitoIdentityUntagResourceResponse;
 
 /**
- <p>A provider representing an Amazon Cognito user pool and its client ID.</p>
+ <p>A provider representing a Cognito User Identity Pool and its client ID.</p>
  */
 @interface AWSCognitoIdentityCognitoIdentityProvider : AWSModel
 
 
 /**
- <p>The client ID for the Amazon Cognito user pool.</p>
+ <p>The client ID for the Cognito User Identity Pool.</p>
  */
 @property (nonatomic, strong) NSString * _Nullable clientId;
 
 /**
- <p>The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
+ <p>The provider name for a Cognito User Identity Pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
  */
 @property (nonatomic, strong) NSString * _Nullable providerName;
-
-/**
- <p>TRUE if server-side token validation is enabled for the identity provider’s token.</p><p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that identity pool will check with the integrated user pools to make sure that the user has not been globally signed out or deleted before the identity pool provides an OIDC token or AWS credentials for the user.</p><p>If the user is signed out or deleted, the identity pool will return a 400 Not Authorized error.</p>
- */
-@property (nonatomic, strong) NSNumber * _Nullable serverSideTokenCheck;
 
 @end
 
@@ -141,7 +107,7 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 @property (nonatomic, strong) NSNumber * _Nullable allowUnauthenticatedIdentities;
 
 /**
- <p>An array of Amazon Cognito user pools and their client IDs.</p>
+ <p>A list representing a Cognito User Identity Pool and its client ID.</p>
  */
 @property (nonatomic, strong) NSArray<AWSCognitoIdentityCognitoIdentityProvider *> * _Nullable cognitoIdentityProviders;
 
@@ -156,17 +122,12 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 @property (nonatomic, strong) NSString * _Nullable identityPoolName;
 
 /**
- <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
- */
-@property (nonatomic, strong) NSDictionary<NSString *, NSString *> * _Nullable identityPoolTags;
-
-/**
  <p>A list of OpendID Connect provider ARNs.</p>
  */
 @property (nonatomic, strong) NSArray<NSString *> * _Nullable openIdConnectProviderARNs;
 
 /**
- <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
+ 
  */
 @property (nonatomic, strong) NSArray<NSString *> * _Nullable samlProviderARNs;
 
@@ -240,7 +201,7 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 
 
 /**
- <p>An identity pool ID in the format REGION:GUID.</p>
+ An identity pool ID in the format REGION:GUID.
  */
 @property (nonatomic, strong) NSString * _Nullable identityPoolId;
 
@@ -261,14 +222,14 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 @end
 
 /**
- <p>Input to the DescribeIdentityPool action.</p>
+ Input to the DescribeIdentityPool action.
  Required parameters: [IdentityPoolId]
  */
 @interface AWSCognitoIdentityDescribeIdentityPoolInput : AWSRequest
 
 
 /**
- <p>An identity pool ID in the format REGION:GUID.</p>
+ An identity pool ID in the format REGION:GUID.
  */
 @property (nonatomic, strong) NSString * _Nullable identityPoolId;
 
@@ -282,7 +243,7 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 
 
 /**
- <p>The Amazon Resource Name (ARN) of the role to be assumed when multiple roles were received in the token from the identity provider. For example, a SAML-based identity provider. This parameter is optional for identity providers that do not support role customization.</p>
+ 
  */
 @property (nonatomic, strong) NSString * _Nullable customRoleArn;
 
@@ -292,7 +253,7 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 @property (nonatomic, strong) NSString * _Nullable identityId;
 
 /**
- <p>A set of optional name-value pairs that map provider names to provider tokens. The name-value pair will follow the syntax "provider_name": "provider_user_identifier".</p><p>Logins should not be specified when trying to get credentials for an unauthenticated identity.</p><p>The Logins parameter is required when using identities associated with external identity providers such as FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External Identity Providers</a> section of the Amazon Cognito Developer Guide.</p>
+ <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
  */
 @property (nonatomic, strong) NSDictionary<NSString *, NSString *> * _Nullable logins;
 
@@ -317,37 +278,37 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 @end
 
 /**
- <p>Input to the GetId action.</p>
+ Input to the GetId action.
  Required parameters: [IdentityPoolId]
  */
 @interface AWSCognitoIdentityGetIdInput : AWSRequest
 
 
 /**
- <p>A standard AWS account ID (9+ digits).</p>
+ A standard AWS account ID (9+ digits).
  */
 @property (nonatomic, strong) NSString * _Nullable accountId;
 
 /**
- <p>An identity pool ID in the format REGION:GUID.</p>
+ An identity pool ID in the format REGION:GUID.
  */
 @property (nonatomic, strong) NSString * _Nullable identityPoolId;
 
 /**
- <p>A set of optional name-value pairs that map provider names to provider tokens. The available provider names for <code>Logins</code> are as follows:</p><ul><li><p>Facebook: <code>graph.facebook.com</code></p></li><li><p>Amazon Cognito user pool: <code>cognito-idp.&lt;region&gt;.amazonaws.com/&lt;YOUR_USER_POOL_ID&gt;</code>, for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p></li><li><p>Google: <code>accounts.google.com</code></p></li><li><p>Amazon: <code>www.amazon.com</code></p></li><li><p>Twitter: <code>api.twitter.com</code></p></li><li><p>Digits: <code>www.digits.com</code></p></li></ul>
+ <p>A set of optional name-value pairs that map provider names to provider tokens.</p><p>The available provider names for <code>Logins</code> are as follows: <ul><li>Facebook: <code>graph.facebook.com</code></li><li>Amazon Cognito Identity Provider: <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code></li><li>Google: <code>accounts.google.com</code></li><li>Amazon: <code>www.amazon.com</code></li><li>Twitter: <code>api.twitter.com</code></li><li>Digits: <code>www.digits.com</code></li></ul></p>
  */
 @property (nonatomic, strong) NSDictionary<NSString *, NSString *> * _Nullable logins;
 
 @end
 
 /**
- <p>Returned in response to a GetId request.</p>
+ Returned in response to a GetId request.
  */
 @interface AWSCognitoIdentityGetIdResponse : AWSModel
 
 
 /**
- <p>A unique identifier in the format REGION:GUID.</p>
+ A unique identifier in the format REGION:GUID.
  */
 @property (nonatomic, strong) NSString * _Nullable identityId;
 
@@ -377,11 +338,6 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
  <p>An identity pool ID in the format REGION:GUID.</p>
  */
 @property (nonatomic, strong) NSString * _Nullable identityPoolId;
-
-/**
- <p>How users for a specific identity provider are to mapped to roles. This is a String-to-<a>RoleMapping</a> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
- */
-@property (nonatomic, strong) NSDictionary<NSString *, AWSCognitoIdentityRoleMapping *> * _Nullable roleMappings;
 
 /**
  <p>The map of roles associated with this pool. Currently only authenticated and unauthenticated roles are supported.</p>
@@ -438,44 +394,44 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 @end
 
 /**
- <p>Input to the GetOpenIdToken action.</p>
+ Input to the GetOpenIdToken action.
  Required parameters: [IdentityId]
  */
 @interface AWSCognitoIdentityGetOpenIdTokenInput : AWSRequest
 
 
 /**
- <p>A unique identifier in the format REGION:GUID.</p>
+ A unique identifier in the format REGION:GUID.
  */
 @property (nonatomic, strong) NSString * _Nullable identityId;
 
 /**
- <p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider, or any other OpenId Connect provider, always include the <code>id_token</code>.</p>
+ <p>A set of optional name-value pairs that map provider names to provider tokens. When using graph.facebook.com and www.amazon.com, supply the access_token returned from the provider's authflow. For accounts.google.com, an Amazon Cognito Identity Provider, or any other OpenId Connect provider, always include the <code>id_token</code>.</p>
  */
 @property (nonatomic, strong) NSDictionary<NSString *, NSString *> * _Nullable logins;
 
 @end
 
 /**
- <p>Returned in response to a successful GetOpenIdToken request.</p>
+ Returned in response to a successful GetOpenIdToken request.
  */
 @interface AWSCognitoIdentityGetOpenIdTokenResponse : AWSModel
 
 
 /**
- <p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.</p>
+ A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.
  */
 @property (nonatomic, strong) NSString * _Nullable identityId;
 
 /**
- <p>An OpenID token, valid for 10 minutes.</p>
+ An OpenID token, valid for 15 minutes.
  */
 @property (nonatomic, strong) NSString * _Nullable token;
 
 @end
 
 /**
- <p>A description of the identity.</p>
+ A description of the identity.
  */
 @interface AWSCognitoIdentityIdentityDescription : AWSModel
 
@@ -486,7 +442,7 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 @property (nonatomic, strong) NSDate * _Nullable creationDate;
 
 /**
- <p>A unique identifier in the format REGION:GUID.</p>
+ A unique identifier in the format REGION:GUID.
  */
 @property (nonatomic, strong) NSString * _Nullable identityId;
 
@@ -496,26 +452,26 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 @property (nonatomic, strong) NSDate * _Nullable lastModifiedDate;
 
 /**
- <p>The provider names.</p>
+ A set of optional name-value pairs that map provider names to provider tokens.
  */
 @property (nonatomic, strong) NSArray<NSString *> * _Nullable logins;
 
 @end
 
 /**
- <p>An object representing an Amazon Cognito identity pool.</p>
+ An object representing a Cognito identity pool.
  Required parameters: [IdentityPoolId, IdentityPoolName, AllowUnauthenticatedIdentities]
  */
 @interface AWSCognitoIdentityIdentityPool : AWSRequest
 
 
 /**
- <p>TRUE if the identity pool supports unauthenticated logins.</p>
+ TRUE if the identity pool supports unauthenticated logins.
  */
 @property (nonatomic, strong) NSNumber * _Nullable allowUnauthenticatedIdentities;
 
 /**
- <p>A list representing an Amazon Cognito user pool and its client ID.</p>
+ <p>A list representing a Cognito User Identity Pool and its client ID.</p>
  */
 @property (nonatomic, strong) NSArray<AWSCognitoIdentityCognitoIdentityProvider *> * _Nullable cognitoIdentityProviders;
 
@@ -525,7 +481,7 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 @property (nonatomic, strong) NSString * _Nullable developerProviderName;
 
 /**
- <p>An identity pool ID in the format REGION:GUID.</p>
+ An identity pool ID in the format REGION:GUID.
  */
 @property (nonatomic, strong) NSString * _Nullable identityPoolId;
 
@@ -535,17 +491,12 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 @property (nonatomic, strong) NSString * _Nullable identityPoolName;
 
 /**
- <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
- */
-@property (nonatomic, strong) NSDictionary<NSString *, NSString *> * _Nullable identityPoolTags;
-
-/**
  <p>A list of OpendID Connect provider ARNs.</p>
  */
 @property (nonatomic, strong) NSArray<NSString *> * _Nullable openIdConnectProviderARNs;
 
 /**
- <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
+ 
  */
 @property (nonatomic, strong) NSArray<NSString *> * _Nullable samlProviderARNs;
 
@@ -557,25 +508,25 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 @end
 
 /**
- <p>A description of the identity pool.</p>
+ A description of the identity pool.
  */
 @interface AWSCognitoIdentityIdentityPoolShortDescription : AWSModel
 
 
 /**
- <p>An identity pool ID in the format REGION:GUID.</p>
+ An identity pool ID in the format REGION:GUID.
  */
 @property (nonatomic, strong) NSString * _Nullable identityPoolId;
 
 /**
- <p>A string that you provide.</p>
+ A string that you provide.
  */
 @property (nonatomic, strong) NSString * _Nullable identityPoolName;
 
 @end
 
 /**
- <p>Input to the ListIdentities action.</p>
+ Input to the ListIdentities action.
  Required parameters: [IdentityPoolId, MaxResults]
  */
 @interface AWSCognitoIdentityListIdentitiesInput : AWSRequest
@@ -587,105 +538,79 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 @property (nonatomic, strong) NSNumber * _Nullable hideDisabled;
 
 /**
- <p>An identity pool ID in the format REGION:GUID.</p>
+ An identity pool ID in the format REGION:GUID.
  */
 @property (nonatomic, strong) NSString * _Nullable identityPoolId;
 
 /**
- <p>The maximum number of identities to return.</p>
+ The maximum number of identities to return.
  */
 @property (nonatomic, strong) NSNumber * _Nullable maxResults;
 
 /**
- <p>A pagination token.</p>
+ A pagination token.
  */
 @property (nonatomic, strong) NSString * _Nullable nextToken;
 
 @end
 
 /**
- <p>The response to a ListIdentities request.</p>
+ The response to a ListIdentities request.
  */
 @interface AWSCognitoIdentityListIdentitiesResponse : AWSModel
 
 
 /**
- <p>An object containing a set of identities and associated mappings.</p>
+ An object containing a set of identities and associated mappings.
  */
 @property (nonatomic, strong) NSArray<AWSCognitoIdentityIdentityDescription *> * _Nullable identities;
 
 /**
- <p>An identity pool ID in the format REGION:GUID.</p>
+ An identity pool ID in the format REGION:GUID.
  */
 @property (nonatomic, strong) NSString * _Nullable identityPoolId;
 
 /**
- <p>A pagination token.</p>
+ A pagination token.
  */
 @property (nonatomic, strong) NSString * _Nullable nextToken;
 
 @end
 
 /**
- <p>Input to the ListIdentityPools action.</p>
+ Input to the ListIdentityPools action.
  Required parameters: [MaxResults]
  */
 @interface AWSCognitoIdentityListIdentityPoolsInput : AWSRequest
 
 
 /**
- <p>The maximum number of identities to return.</p>
+ The maximum number of identities to return.
  */
 @property (nonatomic, strong) NSNumber * _Nullable maxResults;
 
 /**
- <p>A pagination token.</p>
+ A pagination token.
  */
 @property (nonatomic, strong) NSString * _Nullable nextToken;
 
 @end
 
 /**
- <p>The result of a successful ListIdentityPools action.</p>
+ The result of a successful ListIdentityPools action.
  */
 @interface AWSCognitoIdentityListIdentityPoolsResponse : AWSModel
 
 
 /**
- <p>The identity pools returned by the ListIdentityPools action.</p>
+ The identity pools returned by the ListIdentityPools action.
  */
 @property (nonatomic, strong) NSArray<AWSCognitoIdentityIdentityPoolShortDescription *> * _Nullable identityPools;
 
 /**
- <p>A pagination token.</p>
+ A pagination token.
  */
 @property (nonatomic, strong) NSString * _Nullable nextToken;
-
-@end
-
-/**
- 
- */
-@interface AWSCognitoIdentityListTagsForResourceInput : AWSRequest
-
-
-/**
- <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.</p>
- */
-@property (nonatomic, strong) NSString * _Nullable resourceArn;
-
-@end
-
-/**
- 
- */
-@interface AWSCognitoIdentityListTagsForResourceResponse : AWSModel
-
-
-/**
- <p>The tags that are assigned to the identity pool.</p>
- */
-@property (nonatomic, strong) NSDictionary<NSString *, NSString *> * _Nullable tags;
 
 @end
 
@@ -747,35 +672,6 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 @end
 
 /**
- <p>A rule that maps a claim name, a claim value, and a match type to a role ARN.</p>
- Required parameters: [Claim, MatchType, Value, RoleARN]
- */
-@interface AWSCognitoIdentityMappingRule : AWSModel
-
-
-/**
- <p>The claim name that must be present in the token, for example, "isAdmin" or "paid".</p>
- */
-@property (nonatomic, strong) NSString * _Nullable claim;
-
-/**
- <p>The match condition that specifies how closely the claim value in the IdP token must match <code>Value</code>.</p>
- */
-@property (nonatomic, assign) AWSCognitoIdentityMappingRuleMatchType matchType;
-
-/**
- <p>The role ARN.</p>
- */
-@property (nonatomic, strong) NSString * _Nullable roleARN;
-
-/**
- <p>A brief string that the claim must match, for example, "paid" or "yes".</p>
- */
-@property (nonatomic, strong) NSString * _Nullable value;
-
-@end
-
-/**
  <p>Input to the <code>MergeDeveloperIdentities</code> action.</p>
  Required parameters: [SourceUserIdentifier, DestinationUserIdentifier, DeveloperProviderName, IdentityPoolId]
  */
@@ -818,44 +714,6 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 @end
 
 /**
- <p>A role mapping.</p>
- Required parameters: [Type]
- */
-@interface AWSCognitoIdentityRoleMapping : AWSModel
-
-
-/**
- <p>If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code> is required.</p><p>Specifies the action to be taken if either no rules match the claim value for the <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim and there are multiple <code>cognito:roles</code> matches for the <code>Token</code> type.</p>
- */
-@property (nonatomic, assign) AWSCognitoIdentityAmbiguousRoleResolutionType ambiguousRoleResolution;
-
-/**
- <p>The rules to be used for mapping users to roles.</p><p>If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is required.</p>
- */
-@property (nonatomic, strong) AWSCognitoIdentityRulesConfigurationType * _Nullable rulesConfiguration;
-
-/**
- <p>The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims from the Cognito identity provider token to map groups to roles. Rules will attempt to match claims from the token to map to a role.</p>
- */
-@property (nonatomic, assign) AWSCognitoIdentityRoleMappingType types;
-
-@end
-
-/**
- <p>A container for rules.</p>
- Required parameters: [Rules]
- */
-@interface AWSCognitoIdentityRulesConfigurationType : AWSModel
-
-
-/**
- <p>An array of rules. You can specify up to 25 rules per identity provider.</p><p>Rules are evaluated in order. The first one to match specifies the role.</p>
- */
-@property (nonatomic, strong) NSArray<AWSCognitoIdentityMappingRule *> * _Nullable rules;
-
-@end
-
-/**
  <p>Input to the <code>SetIdentityPoolRoles</code> action.</p>
  Required parameters: [IdentityPoolId, Roles]
  */
@@ -868,40 +726,9 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 @property (nonatomic, strong) NSString * _Nullable identityPoolId;
 
 /**
- <p>How users for a specific identity provider are to mapped to roles. This is a string to <a>RoleMapping</a> object map. The string identifies the identity provider, for example, "graph.facebook.com" or "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p><p>Up to 25 rules can be specified per identity provider.</p>
- */
-@property (nonatomic, strong) NSDictionary<NSString *, AWSCognitoIdentityRoleMapping *> * _Nullable roleMappings;
-
-/**
  <p>The map of roles associated with this pool. For a given role, the key will be either "authenticated" or "unauthenticated" and the value will be the Role ARN.</p>
  */
 @property (nonatomic, strong) NSDictionary<NSString *, NSString *> * _Nullable roles;
-
-@end
-
-/**
- 
- */
-@interface AWSCognitoIdentityTagResourceInput : AWSRequest
-
-
-/**
- <p>The Amazon Resource Name (ARN) of the identity pool to assign the tags to.</p>
- */
-@property (nonatomic, strong) NSString * _Nullable resourceArn;
-
-/**
- <p>The tags to assign to the identity pool.</p>
- */
-@property (nonatomic, strong) NSDictionary<NSString *, NSString *> * _Nullable tags;
-
-@end
-
-/**
- 
- */
-@interface AWSCognitoIdentityTagResourceResponse : AWSModel
-
 
 @end
 
@@ -918,7 +745,7 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 @property (nonatomic, strong) NSString * _Nullable developerProviderName;
 
 /**
- <p>A unique ID used by your backend authentication process to identify a user.</p>
+ A unique ID used by your backend authentication process to identify a user.
  */
 @property (nonatomic, strong) NSString * _Nullable developerUserIdentifier;
 
@@ -935,24 +762,24 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
 @end
 
 /**
- <p>Input to the UnlinkIdentity action.</p>
+ Input to the UnlinkIdentity action.
  Required parameters: [IdentityId, Logins, LoginsToRemove]
  */
 @interface AWSCognitoIdentityUnlinkIdentityInput : AWSRequest
 
 
 /**
- <p>A unique identifier in the format REGION:GUID.</p>
+ A unique identifier in the format REGION:GUID.
  */
 @property (nonatomic, strong) NSString * _Nullable identityId;
 
 /**
- <p>A set of optional name-value pairs that map provider names to provider tokens.</p>
+ A set of optional name-value pairs that map provider names to provider tokens.
  */
 @property (nonatomic, strong) NSDictionary<NSString *, NSString *> * _Nullable logins;
 
 /**
- <p>Provider names to unlink from this identity.</p>
+ Provider names to unlink from this identity.
  */
 @property (nonatomic, strong) NSArray<NSString *> * _Nullable loginsToRemove;
 
@@ -973,32 +800,6 @@ typedef NS_ENUM(NSInteger, AWSCognitoIdentityRoleMappingType) {
  <p>A unique identifier in the format REGION:GUID.</p>
  */
 @property (nonatomic, strong) NSString * _Nullable identityId;
-
-@end
-
-/**
- 
- */
-@interface AWSCognitoIdentityUntagResourceInput : AWSRequest
-
-
-/**
- <p>The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.</p>
- */
-@property (nonatomic, strong) NSString * _Nullable resourceArn;
-
-/**
- <p>The keys of the tags to remove from the user pool.</p>
- */
-@property (nonatomic, strong) NSArray<NSString *> * _Nullable tagKeys;
-
-@end
-
-/**
- 
- */
-@interface AWSCognitoIdentityUntagResourceResponse : AWSModel
-
 
 @end
 

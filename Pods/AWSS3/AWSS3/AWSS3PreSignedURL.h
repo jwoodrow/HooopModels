@@ -204,6 +204,7 @@ typedef NS_ENUM(NSInteger, AWSS3PresignedURLErrorType) {
 
  */
 @interface AWSS3GetPreSignedURLRequest : NSObject
+
 /**
  Returns whether the client has enabled accelerate mode for getting and putting objects. The default is `NO`.
  */
